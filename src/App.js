@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SearchField from "./Components/SearchField";
+import SearchResult from "./Components/SearchResult";
+import Gallery from "./Components/Gallery/Gallery";
+import "./App.css";
 
 function App() {
+  const [images, setImages] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Gallery images={galleryImages} setGalleryImages={setGalleryImages} />
+      <SearchField setImages={setImages} />
+      <SearchResult
+        images={images}
+        setGalleryImages={setGalleryImages}
+        galleryImages={galleryImages}
+      />
     </div>
   );
 }

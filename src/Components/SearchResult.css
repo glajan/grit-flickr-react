@@ -1,0 +1,7 @@
+.SearchResultImage {
+  border: 2px solid transparent;
+}
+
+.SearchResultImage.selected {
+  border: 2px solid rgb(32, 42, 119);
+}
